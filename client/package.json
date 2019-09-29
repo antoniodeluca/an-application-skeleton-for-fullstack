@@ -1,0 +1,40 @@
+{
+  "name": "client.an-application-skeleton-for-fullstack.tryouts.antoniodeluca.info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-and-serve": "npx webpack-dev-server --mode development --module-bind 'css=style-loader!css-loader' --module-bind js=babel-loader --entry ./bundled/index.js --output ./bundled/bundle.js --devtool inline-source-map --content-base ./bundled",
+    "test": "npx mocha --require @babel/register ./tests/**/*.js --watch ./assets/**/*.js ./tests/**/*.js",
+    "transpile": "npx babel --source-maps inline --copy-files --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-proposal-class-properties,@babel/plugin-transform-runtime --out-dir ./bundled ./assets --watch"
+  },
+  "keywords": [],
+  "author": "Antonio De Luca <contact@antoniodeluca.info>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5", 
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "mocha": "^6.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.1.1",
+    "sinon": "^7.4.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5"
+  }  
+}
