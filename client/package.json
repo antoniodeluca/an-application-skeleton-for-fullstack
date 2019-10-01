@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "An application skeleton for fullstack (client)",
   "scripts": {
-    "build-and-serve": "npx webpack-dev-server --mode development --module-bind 'css=style-loader!css-loader' --entry ./bundled/index.js --output ./bundled/bundle.js --devtool inline-source-map --content-base ./bundled",
-    "test": "npx mocha --require @babel/register --watch ./assets/**/*.js ./tests/**/*.js",
-    "transpile": "npx babel --source-maps inline --copy-files --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-proposal-class-properties,@babel/plugin-transform-runtime --out-dir ./bundled ./assets --watch"
+    "build-and-serve": "npx webpack-dev-server --mode development --module-bind 'css=style-loader!css-loader' --entry ./output/index.js --output ./output/bundle.js --devtool inline-source-map --content-base ./output",
+    "test": "npx mocha --require @babel/register ./tests/**/*.js --watch ./assets/**/*.js ./tests/**/*.js",
+    "transpile": "npx babel --source-maps inline --copy-files --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-proposal-class-properties,@babel/plugin-transform-runtime --out-dir ./output ./assets --watch"
   },
   "author": "Antonio De Luca <contact@antoniodeluca.info>",
   "license": "MIT",
