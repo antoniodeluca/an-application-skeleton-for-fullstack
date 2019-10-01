@@ -1,15 +1,13 @@
 {
   "name": "server.an-application-skeleton-for-fullstack.tryouts.antoniodeluca.info",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An application skeleton for fullstack (server)",
   "scripts": {
-    "build": "npx webpack --mode development --module-bind js=babel-loader --entry ./bundled/index.js --output ./bundled/bundle.js --devtool inline-source-map --target node --watch",
+    "build": "npx webpack --mode development --entry ./bundled/index.js --output ./bundled/bundle.js --devtool inline-source-map --target node --watch",
     "serve": "npx pm2 start ./bundled/bundle.js --watch",
-    "test": "npx mocha --require @babel/register ./tests/**/*.js --watch ./assets/**/*.js ./tests/**/*.js",
-    "transpile": "npx babel --source-maps inline --copy-files --plugins=@babel/plugin-proposal-class-properties,@babel/plugin-transform-runtime --out-dir ./bundled ./assets --watch"
+    "test": "npx mocha --require @babel/register --watch ./assets/**/*.js ./tests/**/*.js",
+    "transpile": "npx babel --source-maps inline --copy-files --presets=@babel/preset-env --plugins=@babel/plugin-proposal-class-properties,@babel/plugin-transform-runtime --out-dir ./bundled ./assets --watch"
   },
-  "keywords": [],
   "author": "Antonio De Luca <contact@antoniodeluca.info>",
   "license": "MIT",
   "devDependencies": {
@@ -19,7 +17,6 @@
     "@babel/plugin-transform-runtime": "^7.5.5",    
     "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.5.5",
-    "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
     "express": "^4.17.1",
     "mocha": "^6.2.0",
